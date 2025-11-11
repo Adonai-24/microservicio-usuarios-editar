@@ -15,7 +15,7 @@ public class UsuariosController {
     @Autowired
     private UsuariosService usuariosService;
 
-    // Historia de usuario Eliminar Materia - Juan Antonio Garcia Perez
+    // Historia de usuario Eliminar Usuario - Erwin Javier Martinez Morales
     @DeleteMapping("/eliminar-usuario/{id}")
     public boolean deleteUsuarios(@PathVariable Long id) {
         return usuariosService.deleteUsuarios(id);

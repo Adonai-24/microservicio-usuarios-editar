@@ -11,8 +11,7 @@ public class UsuariosService {
     @Autowired
     private UsuariosRepository usuariosRepository;
 
-    // Historia de usuario Eliminar Materias (baja lógica) - Juan Antonio Garcia
-    // Perez
+    // Historia de usuario Eliminar Usuario - Erwin Javier Martinez Morales
     public boolean deleteUsuarios(Long id) {
         return usuariosRepository.findById(id)
                 .map(usuario -> {
@@ -20,7 +19,7 @@ public class UsuariosService {
                     usuariosRepository.save(usuario);
                     return true;
                 })
-                .orElse(false); 
+                .orElse(false);
     }
 
 }
