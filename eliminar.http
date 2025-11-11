@@ -1,0 +1,1 @@
+DELETE http://localhost:8102/api/usuarios/eliminar-usuario/2  HTTP/1.1
