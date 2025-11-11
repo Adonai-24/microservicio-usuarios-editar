@@ -1,11 +1,21 @@
+/*****************************************************************************
+ * @Author                : adolnb<loro.lorenzonunez@gmail.com>              *
+ * @CreatedDate           : 2025-11-10 18:42:02                              *
+ * @LastEditors           : adolnb<loro.lorenzonunez@gmail.com>              *
+ * @LastEditDate          : 2025-11-10 18:42:10                              *
+ * @FilePath              : UsuariosService.java                             *
+ * @CopyRight             : © 2025 Adonai LN - B0MB0                         *
+ ****************************************************************************/
+
 package com.microservicio.usuarios.microservicio_usuarios.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.microservicio.usuarios.microservicio_usuarios.dto.UsuariosAddDto;
+import com.microservicio.usuarios.microservicio_usuarios.dto.UsuariosEditDto;
 import com.microservicio.usuarios.microservicio_usuarios.entity.Usuarios;
 import com.microservicio.usuarios.microservicio_usuarios.repository.UsuariosRepository;
+
 
 @Service
 public class UsuariosService {
@@ -20,6 +30,16 @@ public class UsuariosService {
         usuario.setRol(dto.getRol());
         usuario.setEmail(dto.getEmail());
         usuario.setEstatus(dto.getEstatus() == 1); // convierte int a boolean
+
+        return usuariosRepository.save(usuario);
+    }
+
+    public Usuarios editarUsuario(Long id, UsuariosEditDto dto) {
+        Usuarios usuario = usuariosRepository.findById(id).orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+        usuario.setMatricula(dto.getMatricula());
+        usuario.setNombre(dto.getNom());
+        usuario.setRol(dto.getRol());
+        usuario.setEmail(dto.getEmail());
 
         return usuariosRepository.save(usuario);
     }
