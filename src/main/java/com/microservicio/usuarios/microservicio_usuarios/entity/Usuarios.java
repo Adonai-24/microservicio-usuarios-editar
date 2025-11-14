@@ -1,3 +1,12 @@
+/*****************************************************************************
+ * @Author                : adolnb<loro.lorenzonunez@gmail.com>              *
+ * @CreatedDate           : 2025-11-10 18:23:42                              *
+ * @LastEditors           : adolnb<loro.lorenzonunez@gmail.com>              *
+ * @LastEditDate          : 2025-11-10 18:29:20                              *
+ * @FilePath              : Usuarios.java                                    *
+ * @CopyRight             : © 2025 Adonai LN - B0MB0                         *
+ ****************************************************************************/
+
 package com.microservicio.usuarios.microservicio_usuarios.entity;
 
 import jakarta.persistence.Column;
@@ -7,6 +16,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
+
 
 @Data
 @Entity
